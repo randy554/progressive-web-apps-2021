@@ -1,34 +1,51 @@
 # Progressive Web Apps @cmda-minor-web · 20-21
 
-In this course we will convert the client side web application previously made Web App From Scratch into a server side rendered application. We also add functionalities based on the Service Worker and turn the application into a Progressive Web App. Ultimately we are going to implement a series of optimisations to improve the performance of the application.  
+### GifTrends
 
-## Learning goals
-- _You understand the difference between client side and server side rendering and you can apply server side rendering
-in your application_
-- _You understand how a Service Worker works and you can implement it in your application._
-- _You understand how the critical render path works and how you can optimize it for a better runtime and / or perceived performance._
+The best site to see the latest trending Gifs
 
-[Rubric with learning goals](https://icthva.sharepoint.com/:x:/r/sites/FDMCI_EDU__CMD20_21_Minor_Web_5i7j73jt/_layouts/15/Doc.aspx?sourcedoc=%7B276F53A7-2531-4006-8AD2-08C9A82D3A11%7D&file=PWA%202021%20Rubric.xlsx&action=edit&mobileredirect=true&wdPreviousSession=92686bea-446f-40e3-9303-33fa3f832b82&wdOrigin=TEAMS-ELECTRON.teams.undefined)
-
-## Program
-
-### Week 1 - Server Side Rendering 📡
-
-Goal: Render web pages server side
-
-[Exercises](https://github.com/cmda-minor-web/progressive-web-apps-2021/blob/master/course/week-1.md)    
-[Server Side Rendering - slides Declan Rek](https://github.com/cmda-minor-web/progressive-web-apps-1920/blob/master/course/cmd-2021-server-side-rendering.pdf)  
+[![image.png](https://i.postimg.cc/kM1VpHST/image.png)](https://postimg.cc/5jzNHnnz)
 
 
-### Week 2 - Progressive Web App 🚀
+## Inhoudsopgave
 
-Goals: Convert application to a Progressive Web App
+- [API](#API)
+- [Bronnen](#bronnen)
+- [License](#License)
 
-[Exercises](https://github.com/cmda-minor-web/progressive-web-apps-2021/blob/master/course/week-2.md)  
-[Progressive Web Apps - slides Declan Rek](https://github.com/cmda-minor-web/progressive-web-apps-1920/blob/master/course/cmd-2020-progressive-web-apps.pdf)
 
 
-### Week 3 - Critical Rendering Path 📉 
+
+## Install
+
+### 1. Clone de Repo naar je pc
+
+    git clone https://github.com/randy554/progressive-web-apps-1920.git
+    
+### 2. Navigeer naar de root van de app
+
+    cd progressive-web-apps-1920
+
+### 3. Installeer de benodigde paketten die in de package.json staan
+
+    npm install
+
+### 4. Start server
+
+    npm run start
+
+### 5. Bekijk site
+
+    http://localhost:3001/
+    
+    
+ ## API 
+ 
+ Ik maak gebruik van de [Giphy public API](https://developers.giphy.com/docs/api/endpoint#trending). Van deze API maak ik specifiek gebruik van de `Trending` gedeelte. Deze geeft in realtime de laatste trending gifjes aan. 
+ 
+`https://api.giphy.com/v1/gifs/trending?api_key=tuMYha0ArdAhO9rqn9aM9erHww61XGns&limit=10&rating=g`
+ 
+ [![image.png](https://i.postimg.cc/0296WJc0/image.png)](https://postimg.cc/Cd6LddyR)
 
 Doel: Optimize the Critical Rendering Path   
 [Exercises](https://github.com/cmda-minor-web/progressive-web-apps-2021/blob/master/course/week-3.md)  
