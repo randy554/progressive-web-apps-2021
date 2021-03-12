@@ -18,8 +18,6 @@ app.get("/", (req, res) => {
     .then((result) => result.json())
     .then((jsonReturnData) => {
       res.render("index", {
-        pageTitle: "Welcome to MyGiphy App!",
-        pageDescription: "The Best Trending GIFs",
         data: jsonReturnData.data,
       });
     });
@@ -32,7 +30,6 @@ app.get("/detail/:id/:username?", (req, res) => {
     .then((result) => result.json())
     .then((jsonReturnData) => {
       res.render("detail", {
-        pageTitle: "Welcome to MyGiphy App!",
         data: jsonReturnData.data,
         username: req.params.username,
       });
