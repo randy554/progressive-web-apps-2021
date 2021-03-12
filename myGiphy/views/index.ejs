@@ -1,18 +1,20 @@
 <%- include('partials/header'); %>
 
 <main>
-  <ul>
-    <% data.forEach(giphy => { %>
+  <section id="gallery">
+    <ul>
+      <% data.forEach(giphy => { %>
 
-    <li>
-      <img
-        src="<%- giphy.images.fixed_height.url %>"
-        alt="<%- giphy.title %> "
-      />
-      <a href="/detail/<%- giphy.id %>/<%- giphy.username %>"> More... </a>
-    </li>
+      <li>
+        <img
+          src="<%- giphy.images.fixed_height.url %>"
+          alt="<%- giphy.title %> "
+        />
+        <a href="/detail/<%- giphy.id %>/<%- giphy.username %>"> More... </a>
+      </li>
 
-    <% }) %>
-  </ul>
+      <% }) %>
+    </ul>
+  </section>
 </main>
 <%- include('partials/footer'); %>
