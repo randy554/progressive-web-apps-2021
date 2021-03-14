@@ -1,5 +1,6 @@
 const express = require("express");
 const fetch = require("node-fetch");
+require("dotenv").config();
 
 const app = express();
 const port = 3001;
@@ -10,8 +11,7 @@ app.set("views", "views");
 app.use(express.static("public"));
 
 // API endpoint
-const api_endpoint =
-  "https://api.giphy.com/v1/gifs/trending?api_key=tuMYha0ArdAhO9rqn9aM9erHww61XGns&limit=10&rating=g";
+const api_endpoint = `https://api.giphy.com/v1/gifs/trending?api_key=${process.env.API_KEY}&limit=10&rating=g`;
 
 app.get("/", (req, res) => {
   fetch(api_endpoint)
@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 
 app.get("/detail/:id/:username?", (req, res) => {
   fetch(
-    `https://api.giphy.com/v1/gifs/${req.params.id}?api_key=tuMYha0ArdAhO9rqn9aM9erHww61XGns`
+    `https://api.giphy.com/v1/gifs/${req.params.id}?api_key=${process.env.API_KEY}`
   )
     .then((result) => result.json())
     .then((jsonReturnData) => {
@@ -36,4 +36,6 @@ app.get("/detail/:id/:username?", (req, res) => {
     });
 });
 
-app.listen(port, () => console.log(`Open page @ http://localhost:${port}`));
+app.listen(process.env.PORT, () =>
+  console.log(`Open page @ http://localhost:${process.env.PORT}`)
+);

@@ -10,8 +10,16 @@ header {
   flex-direction: column;
 }
 
-header > h1 {
+header > a {
+  text-decoration: none;
+}
+
+header > a > h1 {
   margin-bottom: 0;
+}
+
+header > a > p {
+  margin-top: 0;
 }
 
 main {
