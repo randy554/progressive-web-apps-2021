@@ -9,6 +9,7 @@
     "build:css": "node scripts/build-css.js",
     "dev": "nodemon server.js"
   },
+  "type": "module",
   "author": "Randy Dalgliesh",
   "license": "ISC",
   "dependencies": {

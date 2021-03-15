@@ -1,9 +1,9 @@
-const gulp = require("gulp");
-const concat = require("gulp-concat");
-const autoprefixer = require("gulp-autoprefixer");
-const cleanCSS = require("gulp-clean-css");
+import gulp from "gulp";
+import concat from "gulp-concat";
+import autoprefixer from "gulp-autoprefixer";
+import cleanCSS from "gulp-clean-css";
 
-return gulp
+gulp
   .src(["./src/css/main.css", "./src/css/header.css"])
   .pipe(concat("index.css")) // samenvoegen bestanden en bestandsnaam opgeven
   .pipe(cleanCSS()) // minify de css

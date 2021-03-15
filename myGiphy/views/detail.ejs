@@ -7,8 +7,12 @@
 
   <p>Posted by: <span><%- username %></span></p>
 
-  <p>Upload date & time: <%- data.import_datetime %></p>
-  <p>Trending date & time: <%- data.trending_datetime %></p>
+  <section id="description">
+    <p>Upload date & time: <datetime><%- data.import_datetime %></datetime></p>
+    <p>
+      Trending date & time: <datetime><%- data.trending_datetime %></datetime>
+    </p>
+  </section>
 </main>
 
 <%- include('partials/footer'); %>
