@@ -6,8 +6,12 @@
       <% data.forEach(giphy => { %>
 
       <li>
-        <img
+        <!-- <img
           src="<%- giphy.images.fixed_height.url %>"
+          alt="<%- giphy.title %> "
+        /> -->
+        <img
+          src="<%- giphy.images.fixed_width.url %>"
           alt="<%- giphy.title %> "
         />
         <a href="/detail/<%- giphy.id %>/<%- giphy.username %>"> More... </a>

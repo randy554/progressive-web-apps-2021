@@ -1,13 +1,25 @@
+:root {
+  --darker: #151320;
+  --smoke_grey: #22212c;
+  --accenture: #454158;
+  --nightblue: #2b2640;
+  --neongreen: #8aff80;
+}
+
 body {
   /* background-color: lightskyblue; */
-  background-color: #16161d;
+  /* background-color: #16161d; */
+  background-color: var(--darker);
   color: aliceblue;
+  margin: 0;
 }
 
 header {
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: var(--smoke_grey);
+  /* margin-bottom: 5em; */
 }
 
 header > a {
@@ -16,6 +28,7 @@ header > a {
 
 header > a > h1 {
   margin-bottom: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 header > a > p {
@@ -39,4 +52,21 @@ ul > li {
   width: 30%;
   margin: 0.5em;
   justify-content: space-between;
+  /* background-color: var(--nightblue); */
+  background-color: var(--smoke_grey);
+}
+
+ul > li > img {
+  margin-bottom: 2em;
+  max-height: 15vh;
+  max-width: 25vw;
+}
+
+ul > li > a {
+  margin: 0 auto 0.5em;
+  color: var(--neongreen);
+}
+
+main > p > span {
+  color: var(--neongreen);
 }

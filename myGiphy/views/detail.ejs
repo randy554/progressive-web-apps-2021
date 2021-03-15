@@ -1,12 +1,14 @@
 <%- include('partials/header'); %>
 
-<h2><%- data.title %></h2>
+<main>
+  <h2><%- data.title %></h2>
 
-<img src="<%- data.images.downsized_large.url %>" alt="<%- data.title %>" />
+  <img src="<%- data.images.downsized_large.url %>" alt="<%- data.title %>" />
 
-<p>Posted by: <%- username %></p>
+  <p>Posted by: <span><%- username %></span></p>
 
-<p>Upload date & time: <%- data.import_datetime %></p>
-<p>Trending date & time: <%- data.trending_datetime %></p>
+  <p>Upload date & time: <%- data.import_datetime %></p>
+  <p>Trending date & time: <%- data.trending_datetime %></p>
+</main>
 
 <%- include('partials/footer'); %>
