@@ -4,7 +4,11 @@ import autoprefixer from "gulp-autoprefixer";
 import cleanCSS from "gulp-clean-css";
 
 gulp
-  .src(["./src/css/main.css", "./src/css/header.css"])
+  .src([
+    "./src/css/main.css",
+    "./src/css/header.css",
+    "./src/css/description.css",
+  ])
   .pipe(concat("index.css")) // samenvoegen bestanden en bestandsnaam opgeven
   .pipe(cleanCSS()) // minify de css
   .pipe(autoprefixer({ cascade: false })) // regelt webkit

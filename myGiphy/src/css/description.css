@@ -1,0 +1,8 @@
+main > p > span {
+  color: var(--neongreen);
+}
+
+#description {
+  background-color: var(--accenture);
+  padding: 0.5em;
+}
