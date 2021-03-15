@@ -1,4 +1,5 @@
 myGiphy/node_modules
 myGiphy/.env
 myGiphy/.DS_Store
+gulpfile.js
 .DS_Store
