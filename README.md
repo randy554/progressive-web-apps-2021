@@ -7,6 +7,8 @@ The best site to see the latest trending Gifs
 [![image.png](https://i.postimg.cc/c1V2BWDD/image.png)](https://postimg.cc/QVJfj2Z5)
 
 
+[![last.png](https://i.postimg.cc/MHyy4CS2/last.png)](https://postimg.cc/XBYGBDqQ)
+
 ## Inhoudsopgave
 
 - [API](#API)
