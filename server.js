@@ -5,8 +5,7 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT;
-// const api_key = process.env.API_KEY;
-const api_key = "tuMYha0ArdAhO9rqn9aM9erHww61XGns";
+const api_key = process.env.API_KEY;
 
 app.set("view engine", "ejs");
 app.set("views", "views");
