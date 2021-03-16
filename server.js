@@ -36,19 +36,15 @@ async function getData(apiEndpoint) {
 }
 
 app.get("/", async (req, res) => {
-  try {
-    const returnData = await getData(
-      `https://api.giphy.com/v1/gifs/trending?api_key=${api_key}&limit=12&rating=g`
-    );
+  const returnData = await getData(
+    `https://api.giphy.com/v1/gifs/trending?api_key=${api_key}&limit=12&rating=g`
+  );
 
-    console.log("Dit is returnData ", returnData);
+  console.log("Dit is returnData ", returnData);
 
-    res.render("index", {
-      data: returnData.data,
-    });
-  } catch (error) {
-    res.send("Error on path: / ");
-  }
+  res.render("index", {
+    data: returnData.data,
+  });
 });
 
 // app.get("/detail/:id/:username?", (req, res) => {
