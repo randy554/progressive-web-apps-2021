@@ -3,3 +3,7 @@ myGiphy/.env
 myGiphy/.DS_Store
 gulpfile.js
 .DS_Store
+.env
+course
+docs
+example
