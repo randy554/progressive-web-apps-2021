@@ -4,7 +4,7 @@
 
 The best site to see the latest trending Gifs
 
-[![image.png](https://i.postimg.cc/kM1VpHST/image.png)](https://postimg.cc/5jzNHnnz)
+[![image.png](https://i.postimg.cc/c1V2BWDD/image.png)](https://postimg.cc/QVJfj2Z5)
 
 
 ## Inhoudsopgave
