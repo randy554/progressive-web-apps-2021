@@ -1,6 +1,6 @@
 import express from "express";
-import fetch from "node-fetch";
 import dotenv from "dotenv";
+import { getData } from "./modules/getData.js";
 dotenv.config();
 
 const app = express();
@@ -25,23 +25,11 @@ app.use(express.static("public"));
 //     });
 // });
 
-async function getData(apiEndpoint) {
-  const response = await fetch(apiEndpoint);
-  console.log("Response: ", response);
-
-  const data = await response.json();
-  console.log("Data:", data);
-
-  return data;
-}
-
 app.get("/", async (req, res) => {
   try {
     const returnData = await getData(
       `https://api.giphy.com/v1/gifs/trending?api_key=${api_key}&limit=12&rating=g`
     );
-
-    console.log("Dit is returnData ", returnData);
 
     res.render("index", {
       data: returnData.data,
@@ -67,8 +55,6 @@ app.get("/detail/:id/:username?", async (req, res) => {
     const returnData = await getData(
       `https://api.giphy.com/v1/gifs/${req.params.id}?api_key=${api_key}`
     );
-
-    console.log("Dit is returnData ", returnData);
 
     res.render("detail", {
       data: returnData.data,
