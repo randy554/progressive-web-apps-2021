@@ -12,19 +12,6 @@ app.set("views", "views");
 
 app.use(express.static("public"));
 
-// // API endpoint
-// const api_endpoint = `https://api.giphy.com/v1/gifs/trending?api_key=${api_key}&limit=12&rating=g`;
-
-// app.get("/", (req, res) => {
-//   fetch(api_endpoint)
-//     .then((result) => result.json())
-//     .then((jsonReturnData) => {
-//       res.render("index", {
-//         data: jsonReturnData.data,
-//       });
-//     });
-// });
-
 app.get("/", async (req, res) => {
   try {
     const returnData = await getData(
@@ -38,17 +25,6 @@ app.get("/", async (req, res) => {
     res.send("Error on path: / ");
   }
 });
-
-// app.get("/detail/:id/:username?", (req, res) => {
-//   fetch(`https://api.giphy.com/v1/gifs/${req.params.id}?api_key=${api_key}`)
-//     .then((result) => result.json())
-//     .then((jsonReturnData) => {
-//       res.render("detail", {
-//         data: jsonReturnData.data,
-//         username: req.params.username,
-//       });
-//     });
-// });
 
 app.get("/detail/:id/:username?", async (req, res) => {
   try {
