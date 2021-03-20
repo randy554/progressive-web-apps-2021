@@ -4,7 +4,7 @@ import { getData } from "./modules/getData.js";
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3001;
 const api_key = process.env.API_KEY;
 
 app.set("view engine", "ejs");
