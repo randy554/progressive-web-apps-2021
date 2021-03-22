@@ -27,4 +27,11 @@ self.addEventListener("activate", (evt) => {
 // Listen to fetch events
 self.addEventListener("fetch", (evt) => {
   console.log("service worker fetch event has occurred", evt);
+
+  // Pause fetch event & respond with own custom event
+  evt.respondWith(
+    caches.match(evt.request).then((cacheResponse) => {
+      return cacheResponse || fetch(evt.request);
+    })
+  );
 });

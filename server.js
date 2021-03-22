@@ -41,6 +41,10 @@ app.get("/detail/:id/:username?", async (req, res) => {
   }
 });
 
+app.get("/offline", (req, res) => {
+  res.render("offline");
+});
+
 app.listen(port || 3001, () =>
   console.log(`Open page @ http://localhost:${port}`)
 );
