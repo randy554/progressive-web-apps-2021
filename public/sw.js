@@ -1,11 +1,11 @@
 const staticCacheName = "site-static";
 const assets = [
-  "/",
   "/css/index.css",
   "/js/index.js",
   "https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap",
   "/images/icons/favicon.png",
   "/images/icons/Icon-192.png",
+  "/offline",
 ];
 // Listen to the installation of the service worker
 self.addEventListener("install", (evt) => {
@@ -30,8 +30,11 @@ self.addEventListener("fetch", (evt) => {
 
   // Pause fetch event & respond with own custom event
   evt.respondWith(
-    caches.match(evt.request).then((cacheResponse) => {
-      return cacheResponse || fetch(evt.request);
-    })
+    caches
+      .match(evt.request)
+      .then((cacheResponse) => {
+        return cacheResponse || fetch(evt.request);
+      })
+      .catch(() => caches.match("/offline"))
   );
 });
