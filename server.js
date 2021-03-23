@@ -18,7 +18,7 @@ app.get("/", async (req, res) => {
       `https://api.giphy.com/v1/gifs/trending?api_key=${api_key}&limit=12&rating=g`
     );
 
-    res.render("index", {
+    res.render("index2", {
       data: returnData.data,
     });
   } catch (error) {
