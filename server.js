@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import { getData } from "./modules/getData.js";
+import compression from "compression";
 dotenv.config();
 
 const app = express();
@@ -9,6 +10,8 @@ const api_key = process.env.API_KEY;
 
 app.set("view engine", "ejs");
 app.set("views", "views");
+
+app.use(compression());
 
 app.use(express.static("public"));
 

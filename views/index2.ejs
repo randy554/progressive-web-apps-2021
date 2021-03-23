@@ -5,8 +5,13 @@
     <% data.forEach(giphy => { %>
     <article>
       <picture class="fixed-ratio" style="padding-bottom: 41%">
+        <source
+          srcset="<%- giphy.images.fixed_width.webp %>"
+          type="image/webp"
+          class="fixed-ratio-content"
+        />
         <img
-          src="<%- giphy.images.fixed_width.url %>"
+          src="<%- giphy.images.fixed_width.webp %>"
           alt="<%- giphy.title %> "
           class="fixed-ratio-content"
         />
