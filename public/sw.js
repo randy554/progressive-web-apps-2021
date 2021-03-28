@@ -1,19 +1,14 @@
-const staticCacheName = "site-static";
+const staticCacheName = "static";
+const dynamicCache = "history";
 const assets = [
   "/css/index.css",
   "/js/index.js",
   "https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap",
-  "https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfCRc4AMP6lbBP.woff2",
-  "https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfABc4AMP6lbBP.woff2",
-  "https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfCBc4AMP6lbBP.woff2",
-  "https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBxc4AMP6lbBP.woff2",
-  "https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfCxc4AMP6lbBP.woff2",
-  "https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfChc4AMP6lbBP.woff2",
-  "https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2",
   "/images/icons/favicon.png",
   "/images/icons/Icon-192.png",
   "/offline",
 ];
+
 // Listen to the installation of the service worker
 self.addEventListener("install", (evt) => {
   console.log("service worker has been installed");
@@ -35,13 +30,57 @@ self.addEventListener("activate", (evt) => {
 self.addEventListener("fetch", (evt) => {
   console.log("service worker fetch event has occurred", evt);
 
-  // Pause fetch event & respond with own custom event
-  evt.respondWith(
-    caches
-      .match(evt.request)
-      .then((cacheResponse) => {
+  // evt.respondWith(
+  //   caches.match(evt.request).then((cacheResponse) => {
+  //     return cacheResponse || fetch(evt.request);
+  //   })
+  // );
+
+  if (evt.request.url.includes("history")) {
+    console.log("BINNEN MAN");
+    evt.respondWith(
+      caches.match(evt.request.url).then((cacheResponse) => {
         return cacheResponse || fetch(evt.request);
       })
-      .catch(() => caches.match("/offline"))
-  );
+    );
+  }
+  // kijk hier
+  if (evt.request.url.includes("/detail")) {
+    caches.open(dynamicCache).then((cache) => {
+      return cache.add(evt.request.url);
+    });
+  }
+
+  // if (evt.request.url.includes("detail")) {
+  //   evt.respondWith(
+  //     caches.open(dynamicCache).then((cache) => {
+  //       console.log("History cash open");
+  //       cache.match(evt.request.url).then((cacheResponse) => {
+  //         return cacheResponse;
+  //       });
+  //     })
+  //   );
+  // }
+
+  // else {
+
+  //     // Pause fetch event & respond with own custom event
+  // evt.respondWith(
+  //   caches
+  //     .match(evt.request)
+  //     .then((cacheResponse) => {
+  //       return (
+  //         cacheResponse ||
+  //         fetch(evt.request).then((fetchResponse) => {
+  //           return caches.open(staticCacheName).then((cache) => {
+  //             cache.put(evt.request.url, fetchResponse.clone());
+  //             return fetchResponse;
+  //           });
+  //         })
+  //       );
+  //     })
+  //     .catch(() => caches.match("/offline"))
+  // );
+
+  // }
 });
