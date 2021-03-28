@@ -30,57 +30,28 @@ self.addEventListener("activate", (evt) => {
 self.addEventListener("fetch", (evt) => {
   console.log("service worker fetch event has occurred", evt);
 
-  // evt.respondWith(
-  //   caches.match(evt.request).then((cacheResponse) => {
-  //     return cacheResponse || fetch(evt.request);
-  //   })
-  // );
-
-  if (evt.request.url.includes("history")) {
-    console.log("BINNEN MAN");
+  // Cache detail page images if not in cache
+  if (
+    // evt.request.destination === "image" &&
+    evt.request.url.includes("gif")
+  ) {
+    // respondewith .
     evt.respondWith(
-      caches.match(evt.request.url).then((cacheResponse) => {
-        return cacheResponse || fetch(evt.request);
+      // open dynamic cache
+      caches.open(dynamicCache).then((cache) => {
+        // check for a match with request url
+        return cache.match(evt.request).then((cacheResponse) => {
+          return (
+            cacheResponse ||
+            fetch(evt.request).then((fetchResponse) => {
+              return caches.open(dynamicCache).then((dcCache) => {
+                dcCache.put(evt.request.url, fetchResponse.clone());
+                return fetchResponse;
+              });
+            })
+          );
+        });
       })
     );
   }
-  // kijk hier
-  if (evt.request.url.includes("/detail")) {
-    caches.open(dynamicCache).then((cache) => {
-      return cache.add(evt.request.url);
-    });
-  }
-
-  // if (evt.request.url.includes("detail")) {
-  //   evt.respondWith(
-  //     caches.open(dynamicCache).then((cache) => {
-  //       console.log("History cash open");
-  //       cache.match(evt.request.url).then((cacheResponse) => {
-  //         return cacheResponse;
-  //       });
-  //     })
-  //   );
-  // }
-
-  // else {
-
-  //     // Pause fetch event & respond with own custom event
-  // evt.respondWith(
-  //   caches
-  //     .match(evt.request)
-  //     .then((cacheResponse) => {
-  //       return (
-  //         cacheResponse ||
-  //         fetch(evt.request).then((fetchResponse) => {
-  //           return caches.open(staticCacheName).then((cache) => {
-  //             cache.put(evt.request.url, fetchResponse.clone());
-  //             return fetchResponse;
-  //           });
-  //         })
-  //       );
-  //     })
-  //     .catch(() => caches.match("/offline"))
-  // );
-
-  // }
 });
