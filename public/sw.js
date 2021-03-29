@@ -22,12 +22,12 @@ self.addEventListener("install", (evt) => {
   );
 });
 
-// Listen to activate event
+// Listen to activate event.
 self.addEventListener("activate", (evt) => {
   console.log("service worker has been activated");
 });
 
-// Listen to fetch events
+// Listen to fetch events.
 self.addEventListener("fetch", (evt) => {
   // console.log("service worker fetch event has occurred", evt);
 
@@ -38,9 +38,9 @@ self.addEventListener("fetch", (evt) => {
   ) {
     // respondewith.
     evt.respondWith(
-      // open dynamic cache
+      // open dynamic cache.
       caches.open(dynamicCache).then((cache) => {
-        // check for a match with request url
+        // check for a match with request url.
         return cache.match(evt.request).then((cacheResponse) => {
           return (
             cacheResponse ||
