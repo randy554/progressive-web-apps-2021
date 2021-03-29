@@ -28,14 +28,14 @@ self.addEventListener("activate", (evt) => {
 
 // Listen to fetch events
 self.addEventListener("fetch", (evt) => {
-  console.log("service worker fetch event has occurred", evt);
+  // console.log("service worker fetch event has occurred", evt);
 
-  // Cache detail page images if not in cache
+  // Cache detail-page images if not in cache
   if (
     // evt.request.destination === "image" &&
     evt.request.url.includes("gif")
   ) {
-    // respondewith .
+    // respondewith
     evt.respondWith(
       // open dynamic cache
       caches.open(dynamicCache).then((cache) => {
@@ -51,6 +51,26 @@ self.addEventListener("fetch", (evt) => {
             })
           );
         });
+      })
+    );
+  } else {
+    evt.respondWith(
+      caches.open(staticCacheName).then((cache) => {
+        return cache
+          .match(evt.request)
+          .then((assetCache) => {
+            return (
+              assetCache ||
+              fetch(evt.request).then((response) => {
+                return response;
+              })
+            );
+          })
+          .catch(() => {
+            return caches
+              .open(staticCacheName)
+              .then((cache) => cache.match("/offline"));
+          });
       })
     );
   }
