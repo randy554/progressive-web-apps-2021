@@ -1,13 +1,25 @@
 // console.log("HISTORY JS IS ALIVE!");
+const dynamicCache = "history";
 
 window.addEventListener("load", () => {
-  //   console.log("pagina:", window.location.href);
-  //   console.log("path:", window.location.pathname);
-  //   if (window.location.href.includes("/detail")) {
-  //     let title = document.querySelector("h2").innerText;
-  //     let img_source = document.querySelector("h2+img").src;
-  //     console.log("Title", title);
-  //     console.log("Img source", img_source);
-  //     localStorage.setItem(title, img_source);
-  //   }
+  let mainEl = document.querySelector("#offline");
+
+  if (mainEl) {
+    console.log("Offline page: ONLINE");
+
+    caches.open(dynamicCache).then((cache) => {
+      cache.keys().then((keys) => {
+        keys.forEach((cacheRequest) => {
+          // console.log("Item", cacheRequest.url);
+          mainEl.insertAdjacentHTML(
+            "beforeend",
+            `<img src="${cacheRequest.url}" width="200" height="200">`
+          );
+        });
+      });
+      console.log("IN CACHE", cache.keys());
+    });
+  } else {
+    console.log("Offline page: OFFLINE");
+  }
 });

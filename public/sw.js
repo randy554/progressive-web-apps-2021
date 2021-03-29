@@ -3,6 +3,7 @@ const dynamicCache = "history";
 const assets = [
   "/css/index.css",
   "/js/index.js",
+  "/js/history.js",
   "https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap",
   "/images/icons/favicon.png",
   "/images/icons/Icon-192.png",
@@ -30,12 +31,12 @@ self.addEventListener("activate", (evt) => {
 self.addEventListener("fetch", (evt) => {
   // console.log("service worker fetch event has occurred", evt);
 
-  // Cache detail-page images if not in cache
+  // Cache detail-page images if not in cache.
   if (
     // evt.request.destination === "image" &&
     evt.request.url.includes("gif")
   ) {
-    // respondewith
+    // respondewith.
     evt.respondWith(
       // open dynamic cache
       caches.open(dynamicCache).then((cache) => {
