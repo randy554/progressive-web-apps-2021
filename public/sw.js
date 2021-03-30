@@ -5,7 +5,6 @@ const assets = [
   "/css/index.css",
   "/js/index.js",
   "/js/history.js",
-  "https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap",
   "/images/icons/favicon.png",
   "/images/icons/Icon-192.png",
   "/offline",
