@@ -10,6 +10,7 @@ const assets = [
   "/offline",
 ];
 
+// Keep dynamic cache limit in check
 let limitCacheSize = (cachename, size) => {
   caches.open(cachename).then((cache) => {
     cache.keys().then((key) => {
@@ -25,22 +26,21 @@ self.addEventListener("install", (evt) => {
   console.log("service worker has been installed");
 
   evt.waitUntil(
-    caches.open(staticCacheName).then((cache) => {
-      console.log("Caching assets");
-      cache.addAll(assets);
-    })
+    caches
+      .open(staticCacheName)
+      .then((cache) => {
+        // Add assets to the cache
+        cache.addAll(assets);
+      })
+      .then(() => self.skipWaiting())
   );
 });
 
 // Listen to activate event.
-self.addEventListener("activate", (evt) => {
-  console.log("service worker has been activated");
-});
+self.addEventListener("activate", (evt) => {});
 
 // Listen to fetch events.
 self.addEventListener("fetch", (evt) => {
-  // console.log("service worker fetch event has occurred", evt);
-
   // Cache detail-page images if not in cache.
   if (evt.request.url.includes("gif")) {
     // respondewith.
@@ -50,6 +50,7 @@ self.addEventListener("fetch", (evt) => {
         // check for a match with request url.
         return cache.match(evt.request).then((cacheResponse) => {
           return (
+            // responde if gif req in cache || fetch req & add cache
             cacheResponse ||
             fetch(evt.request).then((fetchResponse) => {
               return caches.open(dynamicCache).then((dcCache) => {
@@ -64,6 +65,7 @@ self.addEventListener("fetch", (evt) => {
     );
   } else {
     evt.respondWith(
+      // other request if in static cache serve || fetch req
       caches.open(staticCacheName).then((cache) => {
         return cache
           .match(evt.request)
