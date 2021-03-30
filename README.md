@@ -2,14 +2,18 @@
 
 ### GifTrends
 
-The best site to see the latest trending Gifs
+The best site to see the 12 latest trending gifs from the Giphy API.
 
 [![last.png](https://i.postimg.cc/MHyy4CS2/last.png)](https://postimg.cc/XBYGBDqQ)
 
 ## Inhoudsopgave
 
-- [API](#API)
+
 - [Install](#Install)
+- [NPM](#NPM)
+- [API](#API)
+- [OPTIMIZATIONS](#OPTIMIZATIONS)
+- [SOURCES](#SOURCES)
 - [License](#License)
 
 
@@ -37,6 +41,22 @@ The best site to see the latest trending Gifs
 
     http://localhost:3001/
     
+
+## NPM
+
+Dit project maakt gebruik van de volgende packages:
+
+- Express
+- EJS
+- Node-fetch
+- NPM run all
+- Gulp
+- Gulp autoprefixer
+- Gulp clean css
+- Gulp concat
+- Gulp minify
+- Compression
+    
     
  ## API 
  
@@ -45,6 +65,15 @@ The best site to see the latest trending Gifs
 `https://api.giphy.com/v1/gifs/trending?api_key=tuMYha0ArdAhO9rqn9aM9erHww61XGns&limit=10&rating=g`
  
  [![image.png](https://i.postimg.cc/0296WJc0/image.png)](https://postimg.cc/Cd6LddyR)
+ 
+ ## OPTIMIZATIONS
+ 
+ [![image.png](https://i.postimg.cc/fbPP7SSF/image.png)](https://postimg.cc/xkKgnCRy)
+ 
+ ## SOURCES
+ 
+ - [PWA Tutorial]( https://www.youtube.com/watch?v=4XT23X0Fjfk&list=PL4cUxeGkcC9gTxqJBcDmoi5Q2pzDusSL7)
+ 
  
 ## License
 
