@@ -1,3 +1,4 @@
+// source: https://www.youtube.com/watch?v=CHBoXdVdPi0&list=PL4cUxeGkcC9gTxqJBcDmoi5Q2pzDusSL7&index=21
 const staticCacheName = "static";
 const dynamicCache = "history";
 const assets = [
@@ -9,6 +10,16 @@ const assets = [
   "/images/icons/Icon-192.png",
   "/offline",
 ];
+
+let limitCacheSize = (cachename, size) => {
+  caches.open(cachename).then((cache) => {
+    cache.keys().then((key) => {
+      if (key.length > size) {
+        cache.delete(key[0]).then(limitCacheSize(cachename, size));
+      }
+    });
+  });
+};
 
 // Listen to the installation of the service worker
 self.addEventListener("install", (evt) => {
@@ -32,10 +43,7 @@ self.addEventListener("fetch", (evt) => {
   // console.log("service worker fetch event has occurred", evt);
 
   // Cache detail-page images if not in cache.
-  if (
-    // evt.request.destination === "image" &&
-    evt.request.url.includes("gif")
-  ) {
+  if (evt.request.url.includes("gif")) {
     // respondewith.
     evt.respondWith(
       // open dynamic cache.
@@ -47,6 +55,7 @@ self.addEventListener("fetch", (evt) => {
             fetch(evt.request).then((fetchResponse) => {
               return caches.open(dynamicCache).then((dcCache) => {
                 dcCache.put(evt.request.url, fetchResponse.clone());
+                limitCacheSize(dynamicCache, 3);
                 return fetchResponse;
               });
             })

@@ -1,3 +1,4 @@
+// source: https://developer.mozilla.org/en-US/docs/Web/API/Cache/keys
 window.addEventListener("load", () => {
   let mainEl = document.querySelector("#offline");
 
