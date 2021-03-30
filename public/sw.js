@@ -1,6 +1,6 @@
 // source: https://www.youtube.com/watch?v=CHBoXdVdPi0&list=PL4cUxeGkcC9gTxqJBcDmoi5Q2pzDusSL7&index=21
-const staticCacheName = "static";
-const dynamicCache = "history";
+const staticCacheName = "static_v2";
+const dynamicCache = "history_v2";
 const assets = [
   "/css/index.css",
   "/js/index.js",
@@ -54,11 +54,9 @@ self.addEventListener("fetch", (evt) => {
             cacheResponse ||
             fetch(evt.request)
               .then((fetchResponse) => {
-                caches.open(dynamicCache).then((dcCache) => {
-                  dcCache.put(evt.request, fetchResponse.clone());
-                  limitCacheSize(dynamicCache, 10);
-                  return fetchResponse;
-                });
+                cache.put(evt.request, fetchResponse.clone());
+                limitCacheSize(dynamicCache, 10);
+                return fetchResponse;
               })
               .catch(console.error)
           );
