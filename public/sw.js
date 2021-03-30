@@ -56,9 +56,9 @@ self.addEventListener("fetch", (evt) => {
               .then((fetchResponse) => {
                 caches.open(dynamicCache).then((dcCache) => {
                   dcCache.put(evt.request, fetchResponse.clone());
-                  limitCacheSize(dynamicCache, 3);
+                  limitCacheSize(dynamicCache, 10);
+                  return fetchResponse;
                 });
-                return fetchResponse;
               })
               .catch(console.error)
           );
