@@ -21,7 +21,7 @@ let limitCacheSize = (cachename, size) => {
   });
 };
 
-// Listen to the installation of the service worker
+// Listen to the installation of the service worker.
 self.addEventListener("install", (evt) => {
   console.log("service worker has been installed");
 

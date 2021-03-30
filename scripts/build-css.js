@@ -8,6 +8,7 @@ gulp
     "./src/css/main.css",
     "./src/css/header.css",
     "./src/css/description.css",
+    "./src/css/detail.css",
     "./src/css/offline.css",
   ])
   .pipe(concat("index.css")) // samenvoegen bestanden en bestandsnaam opgeven
