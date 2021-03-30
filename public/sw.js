@@ -52,13 +52,15 @@ self.addEventListener("fetch", (evt) => {
           return (
             // responde if gif req in cache || fetch req & add cache
             cacheResponse ||
-            fetch(evt.request).then((fetchResponse) => {
-              return caches.open(dynamicCache).then((dcCache) => {
-                dcCache.put(evt.request.url, fetchResponse.clone());
-                limitCacheSize(dynamicCache, 3);
-                return fetchResponse;
-              });
-            })
+            fetch(evt.request)
+              .then((fetchResponse) => {
+                return caches.open(dynamicCache).then((dcCache) => {
+                  dcCache.put(evt.request.url, fetchResponse.clone());
+                  limitCacheSize(dynamicCache, 3);
+                  return fetchResponse;
+                });
+              })
+              .catch(console.error)
           );
         });
       })
