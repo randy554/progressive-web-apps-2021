@@ -54,11 +54,11 @@ self.addEventListener("fetch", (evt) => {
             cacheResponse ||
             fetch(evt.request)
               .then((fetchResponse) => {
-                return caches.open(dynamicCache).then((dcCache) => {
-                  dcCache.put(evt.request.url, fetchResponse.clone());
+                caches.open(dynamicCache).then((dcCache) => {
+                  dcCache.put(evt.request, fetchResponse.clone());
                   limitCacheSize(dynamicCache, 3);
-                  return fetchResponse;
                 });
+                return fetchResponse;
               })
               .catch(console.error)
           );
