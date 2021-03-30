@@ -3,6 +3,7 @@ header {
   align-items: center;
   flex-direction: column;
   background-color: var(--smoke_grey);
+  text-align: center;
   /* margin-bottom: 5em; */
 }
 

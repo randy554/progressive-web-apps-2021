@@ -1,0 +1,9 @@
+#offlineHead {
+  display: flex;
+  justify-content: center;
+}
+
+#offline {
+  display: flex;
+  justify-content: center;
+}
