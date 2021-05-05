@@ -1,6 +1,6 @@
 // source: https://www.youtube.com/watch?v=CHBoXdVdPi0&list=PL4cUxeGkcC9gTxqJBcDmoi5Q2pzDusSL7&index=21
-const staticCacheName = "static_v2";
-const dynamicCache = "history_v2";
+const staticCacheName = "static";
+const dynamicCache = "history";
 const assets = [
   "/css/index.css",
   "/js/index.js",
@@ -43,20 +43,24 @@ self.addEventListener("activate", (evt) => {});
 self.addEventListener("fetch", (evt) => {
   // Cache detail-page images if not in cache.
   if (evt.request.url.includes("gif")) {
-    // respondewith.
+    console.log("Request heeft GIF", evt.request.url);
+    // pause fetch and respond with custom event
     evt.respondWith(
       // open dynamic cache.
       caches.open(dynamicCache).then((cache) => {
         // check for a match with request url.
         return cache.match(evt.request).then((cacheResponse) => {
+          // responde if gif req in cache || fetch req & add cache
           return (
-            // responde if gif req in cache || fetch req & add cache
             cacheResponse ||
             fetch(evt.request)
               .then((fetchResponse) => {
-                cache.put(evt.request, fetchResponse.clone());
-                limitCacheSize(dynamicCache, 10);
-                return fetchResponse;
+                caches.open(dynamicCache).then((dcCache) => {
+                  dcCache.put(evt.request, fetchResponse.clone());
+                  limitCacheSize(dynamicCache, 3);
+                  return dcCache;
+                });
+                return fetchResponse.clone();
               })
               .catch(console.error)
           );
@@ -64,6 +68,8 @@ self.addEventListener("fetch", (evt) => {
       })
     );
   } else {
+    console.log("Request heeft GEEN GIF", evt.request.url);
+    // pause fetch and respond with custom event
     evt.respondWith(
       // other request if in static cache serve || fetch req
       caches.open(staticCacheName).then((cache) => {
