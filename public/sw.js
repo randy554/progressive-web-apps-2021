@@ -71,7 +71,7 @@ self.addEventListener("fetch", (evt) => {
     console.log("Request heeft GEEN GIF", evt.request.url);
     // pause fetch and respond with custom event
     evt.respondWith(
-      // other request if in static cache serve || fetch req
+      // other requests: if in static cache serve || fetch req
       caches.open(staticCacheName).then((cache) => {
         return cache
           .match(evt.request)
