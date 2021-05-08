@@ -42,7 +42,7 @@ self.addEventListener("activate", (evt) => {});
 // Listen to fetch events.
 self.addEventListener("fetch", (evt) => {
   // Cache detail-page images if not in cache.
-  if (evt.request.url.includes("gif")) {
+  if (evt.request.url.includes("giphy")) {
     console.log("Request heeft GIF", evt.request.url);
     // pause fetch and respond with custom event
     evt.respondWith(
