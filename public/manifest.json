@@ -1,6 +1,7 @@
 {
   "name": "Gif Trends",
   "short_name": "GifTrends",
+  "description": "Latest Trending GIFs",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#151320",
