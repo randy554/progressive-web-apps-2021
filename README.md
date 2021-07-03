@@ -1,12 +1,14 @@
 # Progressive Web Apps @cmda-minor-web · 20-21
 
-### GifTrends
+### The GifTrends App
 
-The best site to see the 12 latest trending gifs from the Giphy API.
+[Live App Demo](https://gif-trends.herokuapp.com/)
+
+The GifTrends app is the best site to keep up with the latest 12 trending gifs on the internet. Each day through the Giphy platform, people exchange over a  [billion](https://www.forbes.com/sites/alexkonrad/2016/10/26/giphy-passes-100-million-users-reveals-gv-as-investor/?sh=77086d684d64) gifs with each other. These gifs cover a variety of topics, from pop culture to politics and sports. The GifTrends app allows u to have a quick overview of what is trending in real-time.
 
 [![last.png](https://i.postimg.cc/MHyy4CS2/last.png)](https://postimg.cc/XBYGBDqQ)
 
-## Inhoudsopgave
+## Table of Contents
 
 
 - [Install](#Install)
@@ -21,23 +23,22 @@ The best site to see the 12 latest trending gifs from the Giphy API.
 
 ## Install
 
-### 1. Clone de Repo naar je pc
+### 1. Clone this Repo
 
     git clone https://github.com/randy554/progressive-web-apps-1920.git
     
-### 2. Navigeer naar de root van de app
+### 2. Navigate to the root of the app
 
     cd progressive-web-apps-1920
 
-### 3. Installeer de benodigde paketten die in de package.json staan
-
+### 3. Install the necessary packages from package.json 
     npm install
 
 ### 4. Start server
 
     npm run start
 
-### 5. Bekijk site
+### 5. View site
 
     http://localhost:3001/
     
