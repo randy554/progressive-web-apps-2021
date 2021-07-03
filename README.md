@@ -43,9 +43,9 @@ The GifTrends app is the best site to keep up with the latest 12 trending gifs o
     http://localhost:3001/
     
 
-## NPM
+## Packages
 
-Dit project maakt gebruik van de volgende packages:
+This project makes use of the following packages:
 
 - Express
 - EJS
