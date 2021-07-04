@@ -12,7 +12,7 @@ let home = async (req, res) => {
       `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=${gifLimit}&rating=${rating}`
     );
 
-    res.render("index2", {
+    res.render("index", {
       data: returnData.data,
     });
   } catch (error) {
