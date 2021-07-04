@@ -101,10 +101,13 @@ Because the **webp** format isn't supported in every browser. I made use of the 
 
  ### Critical CSS
  
+ To optimize the _First Contentful Paint_ (the time it takes the browser to display text or image once a user visits a page) of my app, I chose to make use of the _Critical CSS_ method. With Critical CSS as the term might already suggest, u tell the browser which part of your CSS is more critical and should have a priority when loading the resources. You can decide which part of your app CSS is more critical by looking at above the fold content on your page. Other parts of your CSS code can be deferred. This combination should lower your First Contentful Paint (FCP) time & help with the **Perceived performance** of your site. Although my site at the moment doesn't really consist of long-form content, I believe it's a good development practice to keep and implementation is quite straightforward.
+ 
  
  
  ## Sources
  - [Carbon source code images](https://carbon.now.sh/) 
+ - [Critical CSS]
  - [ExpressJS](https://expressjs.com/)
  - [Giphy endpoint trending](https://developers.giphy.com/docs/api/endpoint/#trending)
  - [Giphy API explorer](https://developers.giphy.com/explorer)
