@@ -8,7 +8,7 @@ The GifTrends app is the best site to keep up with the latest 12 trending gifs o
 
 [![last.png](https://i.postimg.cc/MHyy4CS2/last.png)](https://postimg.cc/XBYGBDqQ)
 
-## Table of Contents
+## Table of contents
 
 
 - [Install](#Install)
@@ -23,7 +23,7 @@ The GifTrends app is the best site to keep up with the latest 12 trending gifs o
 
 ## Install
 
-### 1. Clone this Repo
+### 1. Clone this repo
 
     git clone https://github.com/randy554/progressive-web-apps-1920.git
     
@@ -34,7 +34,7 @@ The GifTrends app is the best site to keep up with the latest 12 trending gifs o
 ### 3. Install the necessary packages from package.json 
     npm install
 
-### 4. Start server
+### 4. Start server in terminal
 
     npm run start
 
@@ -61,19 +61,28 @@ This project makes use of the following packages:
     
  ## API 
  
- Ik maak gebruik van de [Giphy public API](https://developers.giphy.com/docs/api/endpoint#trending). Van deze API maak ik specifiek gebruik van de `Trending` gedeelte. Deze geeft in realtime de laatste trending gifjes aan. 
+ In order to get gifs I make use of the [GIPHY API](https://developers.giphy.com/docs/api/#quick-start-guide). After creating a free developer account, you will receive a KEY to get started. The Giphy API provides several endpoints for different purposes. For this project I'm making use of the [Trending endpoint](https://developers.giphy.com/docs/api/endpoint#trending). This endpoint returns a extensive list of the latest trending gifs. 
  
-`https://api.giphy.com/v1/gifs/trending?api_key=tuMYha0ArdAhO9rqn9aM9erHww61XGns&limit=10&rating=g`
+ ```Javascript
+`https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=S{AMOUNT}&rating=g`
+ ```
+ ### Response data
+ [![Giphy-API.png](https://i.postimg.cc/htzkjqrp/Giphy-API.png)](https://postimg.cc/sMz66qbh)
  
- [![image.png](https://i.postimg.cc/0296WJc0/image.png)](https://postimg.cc/Cd6LddyR)
  
- ## OPTIMIZATIONS
+ ## Features
  
  [![image.png](https://i.postimg.cc/fbPP7SSF/image.png)](https://postimg.cc/xkKgnCRy)
  
- ## SOURCES
- 
- - [PWA Tutorial]( https://www.youtube.com/watch?v=4XT23X0Fjfk&list=PL4cUxeGkcC9gTxqJBcDmoi5Q2pzDusSL7)
+ ## Sources
+ - [Carbon source code images](https://carbon.now.sh/) 
+ - [ExpressJS](https://expressjs.com/)
+ - [Giphy endpoint trending](https://developers.giphy.com/docs/api/endpoint/#trending)
+ - [Giphy API explorer](https://developers.giphy.com/explorer)
+ - [EJS](https://ejs.co/)
+ - [NPM](https://www.npmjs.com/)
+ - [Postimage](https://postimages.org/)
+ - [PWA Tutorial](https://www.youtube.com/watch?v=4XT23X0Fjfk&list=PL4cUxeGkcC9gTxqJBcDmoi5Q2pzDusSL7)
  
  
 ## License
