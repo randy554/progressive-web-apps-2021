@@ -69,6 +69,8 @@ This project makes use of the following packages:
  ### Response data
  [![Giphy-API.png](https://i.postimg.cc/htzkjqrp/Giphy-API.png)](https://postimg.cc/sMz66qbh)
  
+ [![Giphy-API-Wide.png](https://i.postimg.cc/PxqwkKbs/Giphy-API-Wide.png)](https://postimg.cc/PLBxWWF2)
+ 
  [![Giphy-API-2.png](https://i.postimg.cc/FsTwrKXM/Giphy-API-2.png)](https://postimg.cc/ZCywj4RH)
  
  ## Features
