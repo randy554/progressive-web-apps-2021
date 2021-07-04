@@ -77,7 +77,7 @@ This project makes use of the following packages:
  
  ### WEBP
  
-While going through the Giphy API docs, I discovered that the API supported a range of image formats. One of the image formats was WEBP, from the Browser technologies course I had learned that this image format was smaller in file size (compared to JPG & PNG). I assumed using this format would lower my ........ time.
+While going through the Giphy API docs, I discovered that the API supported a range of image formats. One of the image formats was WEBP, from the Browser technologies course I had learned that this image format was smaller in file size (compared to JPG & PNG). I [assumed](https://www.voorhoede.nl/en/blog/why-our-website-is-faster-than-yours/#webp) using this format would significantly lower the site loading time.
  
  
  [![image.png](https://i.postimg.cc/fbPP7SSF/image.png)](https://postimg.cc/xkKgnCRy)
@@ -94,16 +94,18 @@ This adjustment led to a scalable performance gain. See the screenshots from the
 | **Load time:** 1.37s - **Resources:** 8.9 MB. | **Load time:** 941ms - **Resources:** 6.3 MB. | 
 
 
-Because the **webp** format isn't supported in every browser. I made use of the `picture` element. The picture element in combination with the `source` allows u to add a fallback resource in case a format isn't supported:
+Because the **webp** format isn't supported in every browser. I made use of the [picture element](https://www.voorhoede.nl/en/blog/why-our-website-is-faster-than-yours/#-picture-element). The picture element in combination with the `source` allows u to add a fallback resource in case a format isn't supported:
 
 [![picture-Element.png](https://i.postimg.cc/XvqbhYF3/picture-Element.png)](https://postimg.cc/DS9H4FBY)
  
 
  ### Critical CSS
  
- To optimize the _[First Contentful Paint](https://web.dev/first-contentful-paint/)_ (the time it takes the browser to display text or image once a user visits a page) of my app, I chose to make use of the _Critical CSS_ method. With Critical CSS as the term might already suggest, u tell the browser which part of your CSS is more critical and should have a priority when loading the resources. You can decide which part of your app CSS is more critical by looking at above the fold content on your page. Other parts of your CSS code can be deferred. This combination should lower your [First Contentful Paint](https://web.dev/first-contentful-paint/) time & help with the **Perceived performance** of your site. Although my site at the moment doesn't really consist of long-form content, I believe it's a good development practice to keep and implementation is quite straightforward.
+ To optimize the _[First Contentful Paint](https://web.dev/first-contentful-paint/)_ (the time it takes the browser to display text or image once a user visits a page) of my app, I chose to make use of the _Critical CSS_ method. With Critical CSS as the term might already suggest, u tell the browser which part of your CSS is more critical and should have a priority when loading the resources. You can decide which part of your app CSS is more critical by looking at above the fold content on your page. Other parts of your CSS code can be [deferred](https://web.dev/defer-non-critical-css/). This combination should lower your First Contentful Paint (FCP) time & help with the **Perceived performance** of your site. Although my site at the moment doesn't really consist of long-form content, I believe it's a good development practice to keep and implementation is quite straightforward.
  
  [![defer-Critical-CSS.png](https://i.postimg.cc/yN8Ky9wP/defer-Critical-CSS.png)](https://postimg.cc/sMqbVBfQ)
+ 
+ As the critical css part can be placed straight into a `style` tag in your document's head section. The above screenshots shows how you can defer less critical CSS.  
  
  
  
@@ -116,8 +118,10 @@ Because the **webp** format isn't supported in every browser. I made use of the 
  - [Giphy API explorer](https://developers.giphy.com/explorer)
  - [EJS](https://ejs.co/)
  - [NPM](https://www.npmjs.com/)
+ - [Picture element](https://www.voorhoede.nl/en/blog/why-our-website-is-faster-than-yours/#-picture-element)
  - [Postimage](https://postimages.org/)
  - [PWA Tutorial](https://www.youtube.com/watch?v=4XT23X0Fjfk&list=PL4cUxeGkcC9gTxqJBcDmoi5Q2pzDusSL7)
+ - [WEBP](https://www.voorhoede.nl/en/blog/why-our-website-is-faster-than-yours/#webp)
  
  
 ## License
