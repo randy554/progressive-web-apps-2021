@@ -82,6 +82,10 @@ This project makes use of the following packages:
  [![image.png](https://i.postimg.cc/fbPP7SSF/image.png)](https://postimg.cc/xkKgnCRy)
  
  
+| **gif** | **webp** | 
+|:---------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------| 
+| [![1-Network-test-with-gif.png](https://i.postimg.cc/Bbc9XFsH/1-Network-test-with-gif.png)](https://postimg.cc/QKtnzHFd) | [![1-Network-test-with-webp.png](https://i.postimg.cc/K8XSjXq2/1-Network-test-with-webp.png)](https://postimg.cc/F7xnC6XW) | 
+| **Load time:** 1.37s - **Resources:** 8.9 MB. | Load time:** 941ms - **Resources:** 6.3 MB. | 
  
  ## Sources
  - [Carbon source code images](https://carbon.now.sh/) 
