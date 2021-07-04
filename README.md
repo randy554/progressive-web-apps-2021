@@ -66,7 +66,7 @@ This project makes use of the following packages:
  ```Javascript
 `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=${AMOUNT}&rating=g`
  ```
- ### Response data
+**Response data:**
  [![Giphy-API.png](https://i.postimg.cc/htzkjqrp/Giphy-API.png)](https://postimg.cc/sMz66qbh)
  
  
