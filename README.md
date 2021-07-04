@@ -77,17 +77,15 @@ This project makes use of the following packages:
  
  ### WEBP
  
- While going through the Giphy API docs, I discovered that the API supported a range of image formats. One of the image formats was WEBP, from the Browser technologies course I had learned that this image format was smaller in file size (compared to JPG & PNG). I assumed using this format would lower my ........ time.
+While going through the Giphy API docs, I discovered that the API supported a range of image formats. One of the image formats was WEBP, from the Browser technologies course I had learned that this image format was smaller in file size (compared to JPG & PNG). I assumed using this format would lower my ........ time.
  
  
  [![image.png](https://i.postimg.cc/fbPP7SSF/image.png)](https://postimg.cc/xkKgnCRy)
  <em>https://developers.giphy.com/docs/optional-settings/#rendition-guide</em>.
  
 
- 
 
-
- This adjustment led to a scalable performance gain. See the screenshots from the inspector below:
+This adjustment led to a scalable performance gain. See the screenshots from the inspector below:
  
  
 | **gif** | **webp** | 
@@ -96,9 +94,14 @@ This project makes use of the following packages:
 | **Load time:** 1.37s - **Resources:** 8.9 MB. | Load time:** 941ms - **Resources:** 6.3 MB. | 
 
 
-Because the **webp** format isn't supported in every browser. I made us of the `picture` element. The picture element in combination with the `source` allows u to add a fallback resource in case a format isn't supported:
+Because the **webp** format isn't supported in every browser. I made use of the `picture` element. The picture element in combination with the `source` allows u to add a fallback resource in case a format isn't supported:
 
 [![picture-Element.png](https://i.postimg.cc/XvqbhYF3/picture-Element.png)](https://postimg.cc/DS9H4FBY)
+ 
+
+ ### Critical CSS
+ 
+ 
  
  ## Sources
  - [Carbon source code images](https://carbon.now.sh/) 
