@@ -72,6 +72,10 @@ This project makes use of the following packages:
  
  ## Features
  
+ ### WEBP
+ 
+ While going through the Giphy API docs, I discovered that the API supported a range of image formats. One of the image formats was WEBP, from the Browser technologies course I had learned that this image format was smaller in file size (compared to JPG & PNG). I assumed using this format would lower my ........ time.
+ 
  [![image.png](https://i.postimg.cc/fbPP7SSF/image.png)](https://postimg.cc/xkKgnCRy)
  
  ## Sources
