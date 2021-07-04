@@ -73,6 +73,8 @@ This project makes use of the following packages:
  
  ## Features
  
+ With this project, there were a couple of things I implemented to increase the speed of the app or at least create the perception of it. Here are some of the key things:
+ 
  ### WEBP
  
  While going through the Giphy API docs, I discovered that the API supported a range of image formats. One of the image formats was WEBP, from the Browser technologies course I had learned that this image format was smaller in file size (compared to JPG & PNG). I assumed using this format would lower my ........ time.
