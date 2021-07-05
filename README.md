@@ -141,6 +141,8 @@ Although the contents of the concerned files are relatively small, the effects a
  
 ### Service worker
 
+Last but not least, I implemented a caching strategy through the use of a service worker. Because the nature of my app evolves around trend and therefore the content would be continously updated, I had thinker on how I could apply caching usefully. I decided that I would not cache the dynamic images on the homepage but only the ones on the detail page. These images would also be used as functionality for the offline page (will explain later). Then I would also cache my static files such as css, js and some icon images.
+
 **Offline page**
 
 
@@ -152,6 +154,7 @@ Although the contents of the concerned files are relatively small, the effects a
 
 [![6-else-serve-cache-request-offline.png](https://i.postimg.cc/DZ1q8tJZ/6-else-serve-cache-request-offline.png)](https://postimg.cc/cg4Kzkcy)
 
+**Offline page**
 
 [![6-Offline-page-SW.png](https://i.postimg.cc/BQ7p8sLM/6-Offline-page-SW.png)](https://postimg.cc/rKWxbB9r)
 
