@@ -107,10 +107,15 @@ Because the **webp** format isn't supported in every browser. I made use of the 
  [![image.png](https://i.postimg.cc/3wC09knx/image.png)](https://postimg.cc/CZ5KxL33)
  <em>The red lines in the index.css file indicate the non critical css parts of the file. In case there would be critical CSS present these would be marked green</em>
  
+ **My critical CSS in header:**
+ [![critical-CSS.png](https://i.postimg.cc/TYmsW3NP/critical-CSS.png)](https://postimg.cc/4mfPDsgC)
+ 
   **Deferring non critical CSS:**
  [![defer-Critical-CSS.png](https://i.postimg.cc/yN8Ky9wP/defer-Critical-CSS.png)](https://postimg.cc/sMqbVBfQ)
  
- As the critical css part can be placed straight into a `style` tag in your document's head section. The above screenshots shows how you can defer less critical CSS.  
+As the critical css part can be placed straight into a `style` tag in your document's head section. The above screenshot shows how you can defer less critical CSS. The `preload` value allows the stylesheet to be asynchronously requested. The `onload` value is to start the CSS processing after the file finishes loading.
+ 
+ ### Gulp scripts
  
  
  
