@@ -117,6 +117,9 @@ As the critical css part can be placed straight into a `style` tag in your docum
  
  ### Gulp scripts
  
+ [![CSS-gulp.png](https://i.postimg.cc/cJ5q1gz9/CSS-gulp.png)](https://postimg.cc/TymNCwfg)
+ 
+ [![JS-gulp.png](https://i.postimg.cc/N00qw7d2/JS-gulp.png)](https://postimg.cc/87xnRWQT)
  
  
  ## Sources
