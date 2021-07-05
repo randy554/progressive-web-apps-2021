@@ -141,6 +141,21 @@ Although the contents of the concerned files are relatively small, the effects a
  
 ### Service worker
 
+**Offline page**
+
+
+[![6-check-cache.png](https://i.postimg.cc/v8zYb3qt/6-check-cache.png)](https://postimg.cc/z3yZkS1y)
+
+
+[![6-limit-Cache-Size.png](https://i.postimg.cc/9fqtZ4RJ/6-limit-Cache-Size.png)](https://postimg.cc/d7wyKV9y)
+
+
+[![6-else-serve-cache-request-offline.png](https://i.postimg.cc/DZ1q8tJZ/6-else-serve-cache-request-offline.png)](https://postimg.cc/cg4Kzkcy)
+
+
+[![6-Offline-page-SW.png](https://i.postimg.cc/BQ7p8sLM/6-Offline-page-SW.png)](https://postimg.cc/rKWxbB9r)
+
+
  
  ## Sources
  - [Carbon source code images](https://carbon.now.sh/) 
