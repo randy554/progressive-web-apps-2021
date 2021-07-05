@@ -101,8 +101,13 @@ Because the **webp** format isn't supported in every browser. I made use of the 
 
  ### Critical CSS
  
- To optimize the _[First Contentful Paint](https://web.dev/first-contentful-paint/)_ (the time it takes the browser to display text or image once a user visits a page) of my app, I chose to make use of the _Critical CSS_ method. With Critical CSS as the term might already suggest, u tell the browser which part of your CSS is more critical and should have a priority when loading the resources. You can decide which part of your app CSS is more critical by looking at above the fold content on your page. Other parts of your CSS code can be [deferred](https://web.dev/defer-non-critical-css/). This combination should lower your First Contentful Paint (FCP) time & help with the **Perceived performance** of your site. Although my site at the moment doesn't really consist of long-form content, I believe it's a good development practice to keep and implementation is quite straightforward.
+ To optimize the _[First Contentful Paint](https://web.dev/first-contentful-paint/)_ (the time it takes the browser to display text or image once a user visits a page) of my app, I chose to make use of the _Critical CSS_ method. With Critical CSS as the term might already suggest, u tell the browser which part of your CSS is more critical and should have a priority when loading the resources. You can decide which part of your app CSS is more critical by using the coverage tool in the inspector (see image below). The critical CSS mostly focuses on the content above the fold on the page. Other parts of your CSS code can be [deferred](https://web.dev/defer-non-critical-css/). This combination should lower your First Contentful Paint (FCP) time & help with the **Perceived performance** of your site. Although my site at the moment doesn't really consist of long-form content, I believe it's a good development practice to keep and implementation is quite straightforward.
  
+ **Coverage tool:**
+ [![image.png](https://i.postimg.cc/3wC09knx/image.png)](https://postimg.cc/CZ5KxL33)
+ <em>The red lines in the index.css file indicate the non critical css parts of the file. In case there would be critical CSS present these would be marked green</em>
+ 
+  **Deferring non critical CSS:**
  [![defer-Critical-CSS.png](https://i.postimg.cc/yN8Ky9wP/defer-Critical-CSS.png)](https://postimg.cc/sMqbVBfQ)
  
  As the critical css part can be placed straight into a `style` tag in your document's head section. The above screenshots shows how you can defer less critical CSS.  
