@@ -129,6 +129,12 @@ Another way I tried to improve the speed of the site was by reducing the file si
  [![JS-gulp.png](https://i.postimg.cc/N00qw7d2/JS-gulp.png)](https://postimg.cc/87xnRWQT)
  At the moment I don't have multiple JS files that I see fit to merge into one, but I included the concat function as a reminder for future development. To minify my JS file I used the `gulp-uglify` plugin. This basically does the same thing for JS files as the clean CSS plugin does for CSS.
 
+ ### Gzip Compression
+ 
+ With the help of the compression plugin, I added Gzip compression to my middleware. This plugin at its core is quite straightforward to implement. Just `import compression from "compression";` the plugin and add it to your middleware `app.use(compression());` as high as possible. An interesting option I read from the docs is the level option. This option allows u to specify a numerical value (between the numbers -1 to 9) indicating how much compression u would like to apply. The caveat is a higher level of compression takes more time. I opted for the default level, which is 6. The compression unfortunately had no noticeable impact on my relatively small app. 
+ 
+### Service worker
+
  
  ## Sources
  - [Carbon source code images](https://carbon.now.sh/) 
