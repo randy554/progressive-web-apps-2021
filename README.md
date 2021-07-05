@@ -128,6 +128,12 @@ Another way I tried to improve the speed of the site was by reducing the file si
  
  [![JS-gulp.png](https://i.postimg.cc/N00qw7d2/JS-gulp.png)](https://postimg.cc/87xnRWQT)
  At the moment I don't have multiple JS files that I see fit to merge into one, but I included the concat function as a reminder for future development. To minify my JS file I used the `gulp-uglify` plugin. This basically does the same thing for JS files as the clean CSS plugin does for CSS.
+ 
+ | **Before minifying** | **After minifying** | 
+|:---------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------| 
+| [![5-Network-without-minifying.png](https://i.postimg.cc/FHHfXZdd/5-Network-without-minifying.png)](https://postimg.cc/JGS7bjQM) | [![5-Network-with-minifying.png](https://i.postimg.cc/k4m6zdx9/5-Network-with-minifying.png)](https://postimg.cc/Nydj2SJP) | 
+
+Although the contents of the concerned files are relatively small, the effects are noticeable. This is a solution that will also scale well as the project grows.
 
  ### Gzip Compression
  
