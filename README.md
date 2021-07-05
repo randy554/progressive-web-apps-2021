@@ -119,12 +119,16 @@ Because the **webp** format isn't supported in every browser. I made use of the 
  
 As the critical css part can be placed straight into a `style` tag in your document's head section. The above screenshot shows how you can defer less critical CSS. The `preload` value allows the stylesheet to be asynchronously requested. The `onload` value is to start the CSS processing after the file finishes loading.
  
- ### Gulp scripts
+ ### Minifying
+ 
+Another way I tried to improve the speed of the site was by reducing the file sizes. Specifically my CSS & JS production code. If the size of the files can be reduced, then the client will have fewer bytes to download and hence increasing the speed of the site. I manage to reduce my file size with a task runner called [Gulp](https://gulpjs.com/). This is a tool built on Node.js that helps with automating repetitive tasks. I made use of the following gulp-plugins to primarily reduce file sizes:
  
  [![CSS-gulp.png](https://i.postimg.cc/cJ5q1gz9/CSS-gulp.png)](https://postimg.cc/TymNCwfg)
+ In order to maintain some manageability with my code, I segmented most of my CSS code. In order to minify all my CSS for production, I had to **concat/merge** all my files into one. I achieved this by implementing the `gulp-concat` plugin. The `gulp-clean-css` plugin minify's the new **index.css** file and then ```gulp.dest("./public/css") ``` stores the file at the new destination.
  
  [![JS-gulp.png](https://i.postimg.cc/N00qw7d2/JS-gulp.png)](https://postimg.cc/87xnRWQT)
- 
+ At the moment I don't have multiple JS files that I see fit to merge into one, but I included the concat function as a reminder for future development. To minify my JS file I used the `gulp-uglify` plugin. This basically does the same thing for JS files as the clean CSS plugin does for CSS.
+
  
  ## Sources
  - [Carbon source code images](https://carbon.now.sh/) 
