@@ -17,6 +17,7 @@ The GifTrends app is the best site to keep up with the latest 12 trending gifs o
   * [API](#api)
   * [Features](#features)
     + [WEBP](#webp)
+    + [No image reflow](#no-image-reflow)
     + [Critical CSS](#critical-css)
     + [Minifying](#minifying)
     + [Gzip Compression](#gzip-compression)
@@ -73,6 +74,19 @@ This project makes use of the following packages:
  ```Javascript
 `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=${AMOUNT}&rating=g`
  ```
+ * api_key
+
+The api_key you received when you created your developer account.
+
+* limit
+
+The limit is the amount of gifs u would like to receive at once.
+
+* rating
+
+With this parameter you can filter on the type of content you want to receive. For example parameter `G` gives you the most secure content on giphy. See [here](https://developers.giphy.com/docs/optional-settings/#rating) for the other content levels.
+
+
 **Response data:**
 
  [![Giphy-API.png](https://i.postimg.cc/htzkjqrp/Giphy-API.png)](https://postimg.cc/sMz66qbh)
@@ -105,6 +119,13 @@ Because the **webp** format isn't supported in every browser. I made use of the 
 
 [![picture-Element.png](https://i.postimg.cc/XvqbhYF3/picture-Element.png)](https://postimg.cc/DS9H4FBY)
  
+ ### No image reflow
+ 
+Besides the source element, the previous code snippet contains some pieces of valuable CSS. The images being loaded from the Giphy API have inconsistent heights. This leads to image [reflow](https://www.voorhoede.nl/en/blog/say-no-to-image-reflow/) on the page. Basically because the image height changes, the browser has to re-render the page. This prevents JS from being processed and may cause parts of the page to suddenly shift while viewing. This al can be prevented by letting the browser know beforehand how much space the element will need. For example by giving the image element a fixed dimension. I believe implementing this technique contributed to a better [perceived performance](https://developer.mozilla.org/en-US/docs/Learn/Performance/Perceived_performance). Even when your images take a little bit longer to load, the user can already see some content (related text, image placeholder) on the page. The user may interact with frontend functionality a bit quicker.
+
+| **pic 1** | **pic 2** | 
+|:---------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------| 
+| [![7-no-image-reflow-1.png](https://i.postimg.cc/mgCg9kJS/7-no-image-reflow-1.png)](https://postimg.cc/FYFv5r9f) | [![7-no-image-reflow-2.png](https://i.postimg.cc/g0bqywJc/7-no-image-reflow-2.png)](https://postimg.cc/dhnywVrg) | 
 
  ### Critical CSS
  
@@ -213,9 +234,11 @@ With SW on repeat view:<br>
  - [Giphy API explorer](https://developers.giphy.com/explorer)
  - [EJS](https://ejs.co/)
  - [NPM](https://www.npmjs.com/)
+ - [Perceived performance](https://developer.mozilla.org/en-US/docs/Learn/Performance/Perceived_performance)
  - [Picture element](https://www.voorhoede.nl/en/blog/why-our-website-is-faster-than-yours/#-picture-element)
  - [Postimage](https://postimages.org/)
  - [PWA Tutorial](https://www.youtube.com/watch?v=4XT23X0Fjfk&list=PL4cUxeGkcC9gTxqJBcDmoi5Q2pzDusSL7)
+ - [No reflow](https://www.voorhoede.nl/en/blog/say-no-to-image-reflow/)
  - [WEBP](https://www.voorhoede.nl/en/blog/why-our-website-is-faster-than-yours/#webp)
  
  
