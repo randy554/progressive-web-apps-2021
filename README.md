@@ -10,13 +10,20 @@ The GifTrends app is the best site to keep up with the latest 12 trending gifs o
 
 ## Table of contents
 
-
-- [Install](#Install)
-- [NPM](#NPM)
-- [API](#API)
-- [OPTIMIZATIONS](#OPTIMIZATIONS)
-- [SOURCES](#SOURCES)
-- [License](#License)
+  + [The GifTrends App](#the-giftrends-app)
+  * [Table of contents](#table-of-contents)
+  * [Install](#install)
+  * [Packages](#packages)
+  * [API](#api)
+  * [Features](#features)
+    + [WEBP](#webp)
+    + [Critical CSS](#critical-css)
+    + [Minifying](#minifying)
+    + [Gzip Compression](#gzip-compression)
+    + [Service worker](#service-worker)
+  * [Revision checklist (See closed issues)](#revision-checklist--see-closed-issues-)
+  * [Sources](#sources)
+  * [License](#license)
 
 
 
