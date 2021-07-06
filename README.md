@@ -184,7 +184,17 @@ Without SW on first view:<br>
 
 With SW on repeat view:<br>
  [![met-sw-network.png](https://i.postimg.cc/Vk2JvVDp/met-sw-network.png)](https://postimg.cc/pmYW1qNJ)
+ 
+ 
+ ## Revision checklist (See closed issues)
 
+- [x] Fix broken gif on detail page (image doesn't show)
+- [x] Fix webp to gif fallback  on detail page
+- [x] Fix broken offline page
+- [x] Remove old files (like 'index2copy.ejs') 
+- [x] Refactor routes with modules
+- [x] Make app installable 
+- [x] Have a working version of the app online
 
  
  ## Sources
