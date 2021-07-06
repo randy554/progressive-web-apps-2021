@@ -23,8 +23,6 @@ let limitCacheSize = (cachename, size) => {
 
 // Listen to the installation of the service worker
 self.addEventListener("install", (evt) => {
-  console.log("service worker has been installed");
-
   evt.waitUntil(
     caches
       .open(staticCacheName)
@@ -43,7 +41,6 @@ self.addEventListener("activate", (evt) => {});
 self.addEventListener("fetch", (evt) => {
   // Cache detail-page images if not in cache.
   if (evt.request.url.includes("forcache")) {
-    console.log("Request heeft GIF", evt.request.url);
     // pause fetch and respond with custom event
     evt.respondWith(
       // open dynamic cache.
@@ -68,7 +65,6 @@ self.addEventListener("fetch", (evt) => {
       })
     );
   } else {
-    console.log("Request heeft GEEN GIF", evt.request.url);
     // pause fetch and respond with custom event
     evt.respondWith(
       // other requests: if in static cache serve || fetch req
