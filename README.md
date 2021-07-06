@@ -141,22 +141,49 @@ Although the contents of the concerned files are relatively small, the effects a
  
 ### Service worker
 
-Last but not least, I implemented a caching strategy through the use of a service worker. Because the nature of my app evolves around trend and therefore the content would be continously updated, I had thinker on how I could apply caching usefully. I decided that I would not cache the dynamic images on the homepage but only the ones on the detail page. These images would also be used as functionality for the offline page (will explain later). Then I would also cache my static files such as css, js and some icon images.
+Last but not least, I implemented a caching strategy through the use of a service worker. Because the nature of my app evolves around trend and therefore the content would be continously updated, I had thinker on how I could apply caching usefully. I decided that I would not cache the dynamic images on the homepage but only the ones on the detail page (Which are of larger size). These images would also be used as functionality for the offline page (will explain later). Then I would also cache my static files such as css, js and some icon images.
 
-**Offline page**
+**Detail page images**
 
+In order to consitently know which files to cache I added the param: _forcache_ to detailpage images. If this image is already available in the cache serve it from cache, else store it in cache before serving it.
 
 [![6-check-cache.png](https://i.postimg.cc/v8zYb3qt/6-check-cache.png)](https://postimg.cc/z3yZkS1y)
 
 
+**Maintain cache**
+
+To be mindful towards the user, I found it considerate to not overload the users cache. I therefore limited the cache storage to 4 images. If more is added older ones get replaced.
+
 [![6-limit-Cache-Size.png](https://i.postimg.cc/9fqtZ4RJ/6-limit-Cache-Size.png)](https://postimg.cc/d7wyKV9y)
 
+**The other requests**
+
+The larger images on the detailpage are not the only resources where caching gains can be made. As I mentioned earlier there are some static assets that can be served from memory to the user. Below I check to see if a incoming request is already in a `staticCacheName` (a separate cache called history) if it is, serve from there else proced with normal request. If both scenarios don't work serve offline file from cache.
 
 [![6-else-serve-cache-request-offline.png](https://i.postimg.cc/DZ1q8tJZ/6-else-serve-cache-request-offline.png)](https://postimg.cc/cg4Kzkcy)
 
 **Offline page**
 
+The offline file shown with three last visited images from the detailspage.
+
 [![6-Offline-page-SW.png](https://i.postimg.cc/BQ7p8sLM/6-Offline-page-SW.png)](https://postimg.cc/rKWxbB9r)
+
+**Lighthouse**
+
+The service worker (SW) has positivly impacted the [critical rendering path](https://github.com/stanRepo/progressive-web-apps-2021) (the steps the browser goes through to convert HTML,CSS & JS into actual pixels on the screen), cached assets are almost instantly available and ready to work with.
+
+ | **With SW** | **Without SW** | 
+|:---------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------| 
+| [![9-lighthouse-zonder-SW.png](https://i.postimg.cc/BbrgM6MB/9-lighthouse-zonder-SW.png)](https://postimg.cc/5QmLtxcX)| [![9-lighthouse-met-SW.png](https://i.postimg.cc/3R7Qb8b7/9-lighthouse-met-SW.png)](https://postimg.cc/Z9fQWSSD) | 
+
+
+**Network tab**
+
+Without SW on first view:<br>
+ [![zonder-SW-network.png](https://i.postimg.cc/vmzwk1gh/zonder-SW-network.png)](https://postimg.cc/B8Xz1nCP)
+
+With SW on repeat view:<br>
+ [![met-sw-network.png](https://i.postimg.cc/Vk2JvVDp/met-sw-network.png)](https://postimg.cc/pmYW1qNJ)
 
 
  
