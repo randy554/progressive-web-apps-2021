@@ -1,1 +1,1 @@
-main>p>span{color:var(--neongreen)}#description{background-color:var(--accenture);padding:.5em}.back{color:var(--neongreen)}#offlineHead{display:flex;justify-content:center}#offline{display:flex;justify-content:center}
+main>p>span{color:var(--neongreen)}#description{background-color:var(--accenture);padding:.5em}#description>p{font-family:Arial,Helvetica,sans-serif}.back{color:var(--neongreen)}h2{font-family:Arial,Helvetica,sans-serif;font-size:unset}#offlineHead{display:flex;justify-content:center}#offline{display:flex;justify-content:center}

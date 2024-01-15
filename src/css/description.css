@@ -6,3 +6,7 @@ main > p > span {
   background-color: var(--accenture);
   padding: 0.5em;
 }
+
+#description > p {
+  font-family: Arial, Helvetica, sans-serif;
+}
