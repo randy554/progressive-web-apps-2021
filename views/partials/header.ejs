@@ -16,107 +16,108 @@
     />
     <!-- CRITICAL CSS HERE -->
     <style type="text/css">
-            :root {
-              --darker: #151320;
-              --smoke_grey: #22212c;
-              --accenture: #454158;
-              --nightblue: #2b2640;
-              --neongreen: #8aff80;
-              --white: #ffffff;
-              --purple-header: #2c2953;
-              --purple-body: #1b1933;
-            }
-
-            body {
-              background-color: var(--purple-body);
-              color: aliceblue;
-              margin: 0;
-            }
-
-            main {
-              max-width: 1024px;
-              margin: 2em auto;
-            }
-
-            .fixed-ratio {
-              display: block;
-              position: relative;
-              height: 8em;
-              overflow: hidden;
-            }
-
-            .fixed-ratio-content {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              max-width: inherit;
-              object-fit: cover;
-            }
-
-            #gallery {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: space-around;
-            }
-
-            #gallery > article {
-              display: flex;
-              flex-direction: column;
-              width: 30%;
-              margin: 0.5em;
-              justify-content: space-between;
-              background-color: var(--purple-body);
-            }
-
-            #gallery > article:hover,
-            #gallery > article:hover > a {
-              cursor: pointer;
-              color: var(--neongreen);
-            }
-
-            #gallery > article > img {
-              margin-bottom: 2em;
-            }
-
-            #gallery > article > a {
-              margin: 1.5em auto 0.5em;
-              color: var(--white);
-              text-decoration: none;
-              font: bold 0.8125em Arial, Helvetica, sans-serif;
-            }
-
-            #gallery > article > a:hover {
-              text-decoration: underline;
-            }
-
-            header {
-              display: flex;
-              align-items: center;
-              flex-direction: column;
-              background-color: var(--purple-header);
-              text-align: center;
-              position: sticky;
-              top: 0;
-              z-index: 1;
+      :root {
+        --darker: #151320;
+        --smoke_grey: #22212c;
+        --accenture: #454158;
+        --nightblue: #2b2640;
+        --neongreen: #8aff80;
+        --white: #ffffff;
+        --purple-header: #2c2953;
+        --purple-body: #1b1933;
       }
-            }
 
-            header > a {
-              text-decoration: none;
-            }
+      body {
+        background-color: var(--purple-body);
+        color: aliceblue;
+        margin: 0;
+      }
 
-            header > a > h1 {
-              margin-bottom: 0;
-              font-family: "Roboto", sans-serif;
-              color: var(--white);
-            }
+      main {
+        max-width: 1024px;
+        margin: 2em auto;
+      }
 
-            header > a > p {
-              margin-top: 0;
-              color: var(--white);
-            }
+      .fixed-ratio {
+        display: block;
+        position: relative;
+        height: 8em;
+        overflow: hidden;
+      }
+
+      .fixed-ratio-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-width: inherit;
+        object-fit: cover;
+      }
+
+      #gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      #gallery > article {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        margin: 0.5em;
+        justify-content: space-between;
+        background-color: var(--purple-body);
+      }
+
+      #gallery > article:hover,
+      #gallery > article:hover > a {
+        color: var(--neongreen);
+        text-decoration: none;
+      }
+
+      #gallery > article > a > p {
+        font: bold 0.8125em Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin-top: 1.5em;
+      }
+
+      #gallery > article > img {
+        margin-bottom: 2em;
+      }
+
+      #gallery > article > a {
+        /* margin: 1.5em auto 0.5em; */
+        color: var(--white);
+        text-decoration: none;
+        /* font: bold 0.8125em Arial, Helvetica, sans-serif; */
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: var(--purple-header);
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+      }
+
+      header > a {
+        text-decoration: none;
+      }
+
+      header > a > h1 {
+        margin-bottom: 0;
+        font-family: "Roboto", sans-serif;
+        color: var(--white);
+      }
+
+      header > a > p {
+        margin-top: 0;
+        color: var(--white);
+      }
     </style>
     <link
       rel="preload"

@@ -7,3 +7,29 @@
   display: flex;
   justify-content: center;
 }
+
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--purple-header);
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+header > a {
+  text-decoration: none;
+}
+
+header > a > h1 {
+  margin-bottom: 0;
+  font-family: "Roboto", sans-serif;
+  color: var(--white);
+}
+
+header > a > p {
+  margin-top: 0;
+  color: var(--white);
+}

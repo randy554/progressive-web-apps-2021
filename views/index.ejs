@@ -4,23 +4,23 @@
   <section id="gallery">
     <% data.forEach(giphy => { %>
     <article>
-      <picture
-        class="fixed-ratio"
-        style="padding-bottom: 41%"
-      >
-        <source
-          srcset="<%- giphy.images.fixed_width.webp %>"
-          type="image/webp"
-        />
-        <img
-          src="<%- giphy.images.fixed_width.url %>"
-          alt="<%- giphy.title %> "
-          class="fixed-ratio-content"
-        />
-      </picture>
-      <!-- <a href="/detail/<%- giphy.id %>/<%- giphy.username %>"> More... </a> -->
       <a href="/detail/<%- giphy.id %>/<%- giphy.username %>">
-        <%- giphy.title %>
+        <picture
+          class="fixed-ratio"
+          style="padding-bottom: 41%"
+        >
+          <source
+            srcset="<%- giphy.images.fixed_width.webp %>"
+            type="image/webp"
+          />
+          <img
+            src="<%- giphy.images.fixed_width.url %>"
+            alt="<%- giphy.title %> "
+            class="fixed-ratio-content"
+          />
+        </picture>
+
+        <p><%- giphy.title %></p>
       </a>
     </article>
     <% }); %>
