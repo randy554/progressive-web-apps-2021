@@ -1,13 +1,19 @@
 <%- include('partials/header'); %>
 
 <main>
-  <a class="back" href="/">Back</a>
+  <a
+    class="back"
+    href="/"
+    >Back</a
+  >
   <h2><%- data.title %></h2>
 
   <img
     src="<%- data.images.downsized_large.url+'&forcache' %>"
     alt="<%- data.title %>"
   />
+
+  <div class="sharethis-inline-share-buttons"></div>
 
   <p>Posted by: <span><%- username %></span></p>
 

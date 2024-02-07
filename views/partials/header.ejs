@@ -14,6 +14,11 @@
       name="theme-color"
       content="#22212c"
     />
+    <script
+      type="text/javascript"
+      src="https://platform-api.sharethis.com/js/sharethis.js#property=65c408291eabb90019a54716&product=inline-share-buttons&source=platform"
+      async="async"
+    ></script>
     <!-- CRITICAL CSS HERE -->
     <style type="text/css">
       :root {
@@ -53,6 +58,7 @@
         height: 100%;
         max-width: inherit;
         object-fit: cover;
+        border-radius: 0.3125em;
       }
 
       #gallery {
@@ -70,10 +76,17 @@
         background-color: var(--purple-body);
       }
 
+      /* #gallery > article:hover,
+      #gallery > article:hover > a {
+        color: var(--neongreen);
+        text-decoration: none;
+      } */
+
       #gallery > article:hover,
       #gallery > article:hover > a {
         color: var(--neongreen);
         text-decoration: none;
+        background-color: #57556f38;
       }
 
       #gallery > article > a > p {
